@@ -13,4 +13,4 @@
 >
 > ![indexHtml](img/indexHtml.PNG)
 >
-> `Note : `React ใช้ Syntax Jsx คือ Javascript XML
+> `Note : `React ใช้ Syntax JSX คือ Javascript XML ที่จะทำให้เราสามารถเขียน HTML บน Javascript ได้
