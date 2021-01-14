@@ -10,9 +10,22 @@ class User extends Component {
         console.log('componentDidMount');
     }
 
+    onChange = event => {
+        console.log(event.target.value);
+        this.props.onNameChange(event.target.value);
+    };
+
     render() {
         console.log('render');
-        return <div>User</div>
+        // const name = this.props.name;
+        const { name } = this.props;
+        return (
+            <div>User {name} From AppComponent
+                <div>
+                    <input type="text" onChange={this.onChange} />
+                </div>
+            </div>
+        )
     }
 }
 

@@ -54,6 +54,8 @@
 >
 > => เป็น object ที่เอาไว้เก็บข้อมูลของ component ถ้า state มีการเปลี่ยนแปลง component จะถูก re-render ใหม่
 >
+> #### **Approach 1 (function)**
+>
 > - `useState()` => เอาไว้สร้าง state ให้ component
 > - `useState()` => จะ return array ที่เก็บ 2 ค่า คือ value ของ component state , function ในการ set state
 >
@@ -63,7 +65,15 @@
 > -> setInput => เป็น function ในการ set state ใหม่
 > ```
 >
-> ![state](img/state.PNG)
+> ![state1](img/state.PNG)
+>
+> #### **Approach 2 (class)**
+>
+> - สร้างผ่าน property `state` ที่ inherit มาจาก Component(React)
+> - set state ผ่าน `this.setState()` ที่ inherit มาจาก Component(React)
+> - concept state จะเหมือนกับ Approach 1 คือมี current value ของ state, function ในการ set state ใหม่ให้ component
+>
+> ![state2](img/state2.PNG)
 >
 > `Note : ` ทุก component จะต้องมี state ของตัวเอง
 >
@@ -71,9 +81,18 @@
 >
 > => คือ property ที่เอาไว้ pass data ระหว่าง component โดยใช้ HTML attribute (`การส่ง data ระหว่าง component`)
 >
+> #### **Approach 1 (function)**
+>
 > ![prop1](img/prop1.PNG)
 >
 > ![prop2](img/prop2.PNG)
+>
+> #### **Approach 2 (class)**
+>
+> ![prop3](img/prop3.PNG)
+>
+> - มันจะเรียกค่า prop ผ่าน `this.props` ที่ inherit จาก Component (React)
+> - `this.props` มันเป็น read-only ไม่สามารถ assign ค่าให้มันได้ ทำให้ถ้าเราอยากเปลี่ยนค่า prop เราจะต้องทำผ่าน prop ที่เป็น function แล้วให้มันเปลี่ยนค่า property ของ state ที่ parent component แทน
 >
 > #### _`PropTypes`_
 >
@@ -93,11 +112,11 @@
 >
 > => `event` ใน `react` จะเป็น `camel case` ที่ขึ้นต้นด้วย `on` เช่น `onClick`, `onChange`, `onKeyDown`
 >
-> ### **`Render`**
+> ### **`Render (ใช้สำหรับที่เป็น Function Hook?)`**
 >
 > `Note : ` การ render component ที่เป็น Array จะต้องมี Unique Key ประจำ child component เพื่อที่ React จะได้รู้ว่าจะต้องไป render child component ตัวไหน
 >
-> ### **`React Component Life Cycle`**
+> ### **`React Component Life Cycle (ใช้สำหรับที่เป็น Class?)`**
 >
 > 1. Mounting
 >    => คือช่วงที่เปิดหน้าเว็บขึ้นมา component ต่างๆจะถูก Initialize
@@ -107,6 +126,10 @@
 >    => คือช่วงที่เราปิดหน้าเว็บ หรือ มีการเปลี่ยนหน้าเว็บแล้ว component นั้นได้หายไป
 >
 > ![lifeCycle](img/lifeCycle.PNG)
+>
+> `Note : ` function ต่างๆในแต่ละ life cycle เป็นความสามารถที่ inherit มาจาก Component ที่ `import { Component } from 'react';`
+>
+> ### **`React Routing`**
 
 > `Note : ` ความรู้ใหม่
 >

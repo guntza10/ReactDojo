@@ -3,32 +3,22 @@ import './App.css';
 import { Component } from 'react';
 import User from './user/User.js';
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer">
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// แบบเก่า
 class App extends Component {
+  // create state (state เป็น property ของ React ที่ได้มาจากการ inherit Component)
+  state = {
+    name: 'FutureSkill'
+  };
+
+  onNameChange = name => {
+    // this.state.name = name;  วิธีนี้ทำไม่ได้ React ไม่อนุญาติให้ทำแบบนี้
+    // set state ผ่าน  this.setState()
+    this.setState({ name: name });
+  };
+
   render() {
-    let name = "Gunt";
+    const { name } = this.state;
     return <div>Hello {name}
-      <User />
+      <User name={name} onNameChange={this.onNameChange} />
     </div>
   }
 }
