@@ -5,14 +5,23 @@
 > เป็น Library ของ Javascript ที่เอาไว้พัฒนา Web Application
 >
 > ### **`Structure`**
+>
 > #### _`node_modules`_
+>
 > => เป็น folder ที่เก็บ package ต่างๆของ node รวมถึง package React ที่เราจะเอาไปสร้าง Component ต่างๆ
+>
 > #### _`public`_
+>
 > => เป็น folder ที่เก็บไฟล์ public ต่างๆ เช่น index.html,พวกรูปภาพ,โลโก้
+>
 > #### _`src`_
+>
 > => เป็น folder ที่เราใช้ในการทำงานต่างๆบน React
+>
 > #### _`package.json`_
+>
 > => เป็นไฟล์ที่มีรายละเอียดพวก dependency ต่างๆที่เราลง,script ต่างๆที่เราใช้ run,เครื่องมือ tool ต่างๆที่ถูก set ไว้ในตัว project นี้
+>
 > #### _`App.js`_
 >
 > => เป็นไฟล์ root component (`component หลัก`)
@@ -30,6 +39,7 @@
 > ![indexHtml](img/indexHtml.PNG)
 >
 > ### **`Component`**
+>
 > => เป็นส่วนประกอบเล็กๆที่นำมาประกอบกันเพื่อสร้างหน้า web application โดยที่แต่ละ component จะทำงานแยกกันโดยสิ้นเชิง และใน 1 component สามารถมี component ย่อยอยู่ข้างในได้ด้วย
 >
 > `Note : `React ใช้ Syntax JSX คือ Javascript XML ที่จะทำให้เราสามารถเขียน HTML บน Javascript ได้ ซึ่ง compile ผ่าน Babel
@@ -37,31 +47,56 @@
 > `Note : ` การเขียน `( )` ครอบ JSX จะทำให้เราสามารถเขียน JSX หลายบรรทัดได้
 >
 > `Note : ` การเขียน class css บน React เราใช้ attribute `className` แทน `class` ปกติ
+>
 > ### **`State & Prop`**
-> #### *`State`*
+>
+> #### _`State`_
+>
 > => เป็น object ที่เอาไว้เก็บข้อมูลของ component ถ้า state มีการเปลี่ยนแปลง component จะถูก re-render ใหม่
-> - `useState` => เอาไว้สร้าง state ให้ component
+>
+> - `useState()` => เอาไว้สร้าง state ให้ component
+> - `useState()` => จะ return array ที่เก็บ 2 ค่า คือ value ของ component state , function ในการ set state
+>
+> ```
+> const [input, setInput] = useState("ค่าเริ่มต้นของ state");
+> -> input => เป็น current value ของ state
+> -> setInput => เป็น function ในการ set state ใหม่
+> ```
 >
 > ![state](img/state.PNG)
-> #### *`Prop`*
-> => คือ property ที่เอาไว้ pass data ระหว่าง component โดยใช้ HTML attribute
+>
+> `Note : ` ทุก component จะต้องมี state ของตัวเอง
+>
+> #### _`Prop`_
+>
+> => คือ property ที่เอาไว้ pass data ระหว่าง component โดยใช้ HTML attribute (`การส่ง data ระหว่าง component`)
 >
 > ![prop1](img/prop1.PNG)
 >
 > ![prop2](img/prop2.PNG)
-> #### *`PropTypes`*
+>
+> #### _`PropTypes`_
+>
 > => เอาไว้เช็ค `Prop` ที่ส่งเข้ามาว่าถูกต้องรึเปล่า ใน `PropTypes` จะประกอบไปด้วย Validator มากมายเลย (`เอาไว้ทำ Validate`)
 >
 > ![propTypes](img/propTypes.PNG)
-> 
+>
 > `Note : ` PropTypes ไม่มีใน React ต้องลงเพิ่ม
+>
 > ```
 > npm i prop-types --save
 >
 > --save เพื่อให้มัน save ลงบน package.json
 > ```
+>
 > ### **`Handling Events`**
+>
 > => `event` ใน `react` จะเป็น `camel case` ที่ขึ้นต้นด้วย `on` เช่น `onClick`, `onChange`, `onKeyDown`
+>
+> ### **`Render`**
+>
+> `Note : ` การ render component ที่เป็น Array จะต้องมี Unique Key ประจำ child component เพื่อที่ React จะได้รู้ว่าจะต้องไป render child component ตัวไหน
+>
 > ### **`React Component Life Cycle`**
 >
 > 1. Mounting
@@ -74,6 +109,7 @@
 > ![lifeCycle](img/lifeCycle.PNG)
 
 > `Note : ` ความรู้ใหม่
+>
 > ```
 > <input /> => self closing tag => ใช้สำหรับ tag element ที่ไม่ต้องมี content ด้านใน เช่น input,img,link,hr เป็นต้น
 >

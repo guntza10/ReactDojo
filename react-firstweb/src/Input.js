@@ -5,7 +5,17 @@ function Input({ addPost }) {
     const [input, setInput] = useState('');
 
     function onChange(event) {
+        // set state ใหม่ให้ input state
         setInput(event.target.value)
+    }
+
+    function onKeyDown(event) {
+        const title = event.target.value;
+
+        if (event.key === "Enter" && title) {
+            addPost(title);
+            setInput('');
+        }
     }
 
     return (
@@ -13,7 +23,9 @@ function Input({ addPost }) {
             <div className="Input_header">Create Post</div>
             <input className="Input_field"
                 type="text"
-                value={input} />
+                value={input}
+                onChange={onChange}
+                onKeyDown={onKeyDown} />
         </div>
     );
 }
