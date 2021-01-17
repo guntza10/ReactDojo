@@ -4,6 +4,14 @@
 >
 > เป็น Library ของ Javascript ที่เอาไว้พัฒนา Web Application
 >
+> ### _`Create React Command`_
+>
+> ```
+> npx create-react-app "Project Name"
+> ```
+>
+> `Reference : ` https://github.com/facebook/create-react-app/
+>
 > ### **`Structure`**
 >
 > #### _`node_modules`_
