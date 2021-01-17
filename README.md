@@ -130,6 +130,14 @@
 > `Note : ` function ต่างๆในแต่ละ life cycle เป็นความสามารถที่ inherit มาจาก Component ที่ `import { Component } from 'react';`
 >
 > ### **`React Routing`**
+>
+> => เป็นการกำหนด route path ของการเปลี่ยนหน้า page (`กำหนด route path ให้ component เพื่อกำหนดว่า route นี้จะเอา component ไหนมา render`)
+>
+> `Note : `
+>
+> ```
+> npm install react-router-dom
+> ```
 
 > `Note : ` ความรู้ใหม่
 >

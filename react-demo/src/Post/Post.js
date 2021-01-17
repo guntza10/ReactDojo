@@ -1,7 +1,7 @@
 import { Component } from "react";
 import axios from 'axios';
 
-class User extends Component {
+class Post extends Component {
     constructor() {
         super();
         console.log('constructor');
@@ -12,7 +12,7 @@ class User extends Component {
 
     async componentDidMount() {
         console.log('componentDidMount');
-        const result = await axios.get("https://jsonplaceholder.typicode.com/users");
+        const result = await axios.get("https://jsonplaceholder.typicode.com/posts");
         console.log('result', result);
         this.setState({ data: result.data });
     }
@@ -27,26 +27,23 @@ class User extends Component {
         // const name = this.props.name;
         const { name } = this.props;
         return (
-            // <div>User {name} From AppComponent
-            //     <div>
-            //         <input type="text" onChange={this.onChange} />
-            //     </div>
-            // </div>
             <div>
                 <table>
                     <thead>
                         <tr>
+                            <td>userId</td>
                             <td>Id</td>
-                            <td>Name</td>
-                            <td>Email</td>
+                            <td>Title</td>
+                            <td>Body</td>
                         </tr>
                     </thead>
                     <tbody>
                         {this.state.data.map(user => {
                             return (<tr>
+                                <td>{user.userId}</td>
                                 <td>{user.id}</td>
-                                <td>{user.name}</td>
-                                <td>{user.email}</td>
+                                <td>{user.title}</td>
+                                <td>{user.body}</td>
                             </tr>);
                         })}
                     </tbody>
@@ -56,4 +53,4 @@ class User extends Component {
     }
 }
 
-export default User;
+export default Post;
