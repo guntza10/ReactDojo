@@ -52,11 +52,19 @@
 >
 > => เป็นส่วนประกอบเล็กๆที่นำมาประกอบกันเพื่อสร้างหน้า web application โดยที่แต่ละ component จะทำงานแยกกันโดยสิ้นเชิง และใน 1 component สามารถมี component ย่อยอยู่ข้างในได้ด้วย
 >
-> `Note : `React ใช้ Syntax `JSX` คือ Javascript XML ที่จะทำให้เราสามารถเขียน HTML บน Javascript ได้ ซึ่ง compile ผ่าน Babel
+> `Note : `React ใช้ Syntax `JSX` คือ Javascript XML ที่จะทำให้เราสามารถเขียน HTML บน Javascript ได้ ซึ่งเราต้อง `import React from 'react';` ก่อนถึงจะใช้ `JSX` ได้
 >
 > `Note : ` การเขียน `( )` ครอบ JSX จะทำให้เราสามารถเขียน JSX หลายบรรทัดได้
 >
 > `Note : ` การเขียน class css บน React เราใช้ attribute `className` แทน `class` ปกติ
+>
+> ### _`JSX differences`_
+>
+> 1. `class` => `className`
+> 2. `for` => `htmlFor`
+> 3. camel case ในการตั้งชื่อ
+>    - `onclick` => `onClick`
+>    - `tabindex` => `tabIndex`
 >
 > ### _`Component Type`_
 >
@@ -99,6 +107,12 @@
 > - มี `state` ที่เป็น object ที่ใช้เก็บข้อมูลของ Component (`เมื่อ state มีการเปลี่ยนแปลง Component จะ re-render ใหม่`)
 > - เหมาะใช้จัดการ UI,Logic ที่ซับซ้อน
 > - มี `Life Cycle Hook`
+>
+> ## **`Props`**
+>
+> => คือ property ที่เอาไว้ pass data ระหว่าง component โดยใช้ HTML attribute (`การส่ง data ระหว่าง component`)
+>
+> `Note : ` เรากำหนด props ผ่าน `HTML attribute` บน `child component` ใน `parent component`
 >
 > ## **`State & Prop`**
 >
@@ -190,6 +204,10 @@
 > ```
 > npm install react-router-dom
 > ```
+>
+> ## **`Hook`**
+>
+> => เราสามารถใช้ `state` และ `feature อื่นๆของ react `ได้โดยที่ไม่ต้องเขียนเป็น `class component` อีกต่อไป สามารถนำมาเขียนใน `functional component` ได้
 
 > `Note : ` ความรู้ใหม่
 >

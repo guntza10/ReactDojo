@@ -7,7 +7,7 @@ import React from 'react';
 
 // arrow function (expression function)
 const FunctionalComponent = () => {
-    return (<h1>Hello Gunt From Functional Component</h1>);
+    return (<h2>Hello Gunt From Functional Component</h2>);
 }
 
 export default FunctionalComponent;
