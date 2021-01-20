@@ -73,11 +73,32 @@
 >
 > `Note : ` สามารถเขียนเป็น Arrow Function ได้
 >
+> `Note : ` `import React from 'react';` สำหรับ functional component
+>
 > ![functionComponent](img/functionComponent.PNG)
 >
 > ### _`Class Component`_
 >
 > => คือ class es6 javascript ที่รับค่าเข้ามาผ่าน `prop` และ return `JSX` ออกไปเป็น `UI`
+>
+> `Note : ` `import React, { Component } from 'react';` สำหรับ class component
+>
+> ![classComponent](img/classComponent.PNG)
+>
+> ### _`Functional Component VS Class Component`_
+>
+> #### **`ข้อดี Functional Component`**
+>
+> - ไม่ต้องใช้ `this keyword` ในการ ref property เหมือน `class`
+> - ไม่ต้องใช้ `state` ที่เป็น private state ที่ inherit จาก Component Class ของ React Library (`Class Component จะมี private state มาให้เป็น default ที่ได้จากการ inherit Component Class ของ React`)
+> - การเขียน functional component เราไม่ต้องจัดการ logic ที่ซับซ้อน เรามักใช้จัดการกับ `UI` เป็นหลัก
+>
+> #### **`ข้อดี Class Component`**
+>
+> - มี feature ให้ใช้เยอะ
+> - มี `state` ที่เป็น object ที่ใช้เก็บข้อมูลของ Component (`เมื่อ state มีการเปลี่ยนแปลง Component จะ re-render ใหม่`)
+> - เหมาะใช้จัดการ UI,Logic ที่ซับซ้อน
+> - มี `Life Cycle Hook`
 >
 > ## **`State & Prop`**
 >
