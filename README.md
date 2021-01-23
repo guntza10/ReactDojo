@@ -110,10 +110,95 @@
 >
 > ## **`Props`**
 >
-> => คือ property ที่เอาไว้ pass data ระหว่าง component โดยใช้ HTML attribute (`การส่ง data ระหว่าง component`)
+> => คือ Object ของ property ที่เอาไว้ pass data ระหว่าง component โดยใช้ HTML attribute (`เป็นการส่ง data ระหว่าง component`)
 >
 > `Note : ` เรากำหนด props ผ่าน `HTML attribute` บน `child component` ใน `parent component`
 >
+> `Note : ` การ binding data บน `JSX` ใช้ `{ }` ครอบ data ที่ต้องการ binding
+>
+> `Note : ` ใน `JSX` สามารถมี tag element container ได้เพียง 1 ตัวเท่านั้น (`ต้องมีตัว tag container ครอบทุก tag ได้แค่ 1 ตัว`)
+>
+> `Note : ` เราไม่สามารถ assign ค่าให้ `Props` ได้ `กฎสำคัญอย่าลืม` Props ถูกสร้างมาเพื่อให้ `read-only` เท่านั้น
+>
+> ### _`Function Props`_
+>
+> => แบบ Function จะรับ props เข้ามาผ่าน parameter
+>
+> ![props1](img/props1.PNG)
+>
+> ![props2](img/props2.PNG)
+>
+> ### _`Class Props`_
+>
+> => แบบ Class จะรับ props เข้ามาผ่าน `this.props` ที่ได้มาจากการ inherit Component ของ React Library
+>
+> ![props3](img/props3.PNG)
+>
+> ![props4](img/props4.PNG)
+>
+> `Note : ` `self closing tag` กับ `closing tag` ใน React
+>
+> - `self closing tag component` => ไม่ต้องมี content ข้างใน
+> - `closing tag component` => มี content ข้างใน และถ้าอยากให้ render content ข้างใน ใน Component ต้องมีการ binding `props.children` ด้วย ถ้าไม่ binding มันจะไม่ถูก render เอามาโชว์
+>
+> ![renderContentInComponent](img/renderContentInComponent.PNG)
+>
+> ![renderContentInComponent2](img/renderContentInComponent2.PNG)
+>
+> ## **`State`**
+>
+> => เป็น object ที่เอาไว้เก็บข้อมูลของ component ถ้า state มีการเปลี่ยนแปลง component จะถูก re-render ใหม่
+>
+> `Note : ` `state` ของ `function component`, `class component`
+>
+> - `function component` => ใช้ `useState Hook`
+> - `class component` => ใช้ `this.state` ที่ได้จากการ inherit Component ของ React Library
+>
+> `Note : ` ใน `class component` เรากำหนด `state` ใน `constructor` ของ class และเรียกใช้ `super()` เพื่อ `Initialize constructor` ของ `Component Class` ที่ inherit มา ของ React Library
+>
+> ![states1](img/states1.PNG)
+>
+> ### _`setState`_
+>
+> => การ setState เป็นเปลี่ยนแปลงค่า state ให้ component re-render ใหม่
+>
+> `Note : ` เราเปลี่ยนแปลงค่าของ `state` ด้วยการ `setState` เพื่อให้ component re-render เอาค่า state ใหม่มา render แต่ถ้าเราไม่ใช้ `setState` และใช้การเปลี่ยนแปลงค่า state โดยตรงก็ทำได้เพียงแต่ component จะไม่ re-render ทำให้ค่า state ที่เปลี่ยนแปลง ไม่ถูก render เอามาโชว์ (`** สำคัญอย่าลืม`)
+>
+> ![setState2](img/setState2.PNG)
+>
+> ![setState1](img/setState1.PNG)
+>
+> `Note : ` `setState` เป็น `asynchronous` ถ้าเราอยากจะ handle อะไรก็ตามหลังจากที่มัน `setState` เสร็จ สามารถทำได้ด้วยใช้ call back function โยนเข้าไปใน parameter ตัวที่ 2 ของ `setState`
+>
+> `Note : ` `setState(a,b)`
+>
+> - `a` => เป็น object ของ state ที่เราต้องการเปลี่ยนแปลง
+> - `b` => เป็น call back function ที่จะถูกเรียกหลัง `setState` เสร็จ
+>
+> ![setState3](img/setState3.PNG)
+>
+> `Note : ` การเรียกใช้ `setState` พร้อมกันหลายครั้ง มันจะทำงานพร้อมกันหมด เพราะเป็น `asynchronous` และ React มันจะ `group multiple setState` ให้เป็น `single setState pipe` และถ้าเราอยากจัดการกับ pipe ตัวนี้โดยให้มันทำทีละตัว และรับค่ามาจาก state ก่อนหน้า ต้อง `setState` ผ่าน `previousState` โดยมันจะไล่ทำ `setState` แต่ละตัวใน pipe นี้
+>
+> - **Problem**
+>
+> ![setState4](img/setState4.PNG)
+>
+> ![setState5](img/setState5.PNG)
+>
+> ![setState6](img/setState6.PNG)
+>
+> - **Solve**
+>
+> ![setState4](img/setState4.PNG)
+>
+> ![setState7](img/setState7.PNG)
+>
+> ![setState8](img/setState8.PNG)
+>
+> `Note : ` ในการ `setState` ผ่าน `previousState` สามารถรับค่า `props` มา handle ได้
+>
+> ![setState9](img/setState9.PNG)
+
 > ## **`State & Prop`**
 >
 > ### _`State`_
@@ -216,3 +301,10 @@
 >
 > <div> </div> => closing tag => ใช้สำหรับ tag element ที่ต้องมี content ด้านใน
 > ```
+
+> ## `Trick React`
+>
+> ### `ES7 React/Redux/GraphQL/React-Native snippets`
+>
+> - `rce` => สร้าง component class ให้ auto ไม่ต้องเสียเวลาพิมพ์เอง (`**แต่อย่าลืมลบ export ข้างหน้า class ออก`)
+> - `rconst` => สร้าง constructor ของ component class ให้ auto
