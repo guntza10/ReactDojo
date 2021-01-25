@@ -198,6 +198,28 @@
 > `Note : ` ในการ `setState` ผ่าน `previousState` สามารถรับค่า `props` มา handle ได้
 >
 > ![setState9](img/setState9.PNG)
+>
+> ## **`Destructuring Props & State`**
+>
+> => เป็นเทคนิคของ Javascript ในการแตก property ของ Props,State ออกมา
+>
+> ### _`Function (Props)`_
+>
+> **Approach 1**
+>
+> ![destructuringProps1](img/destructuringProps1.PNG)
+>
+> **Approach 2**
+>
+> ![destructuringProps2](img/destructuringProps2.PNG)
+>
+> ### _`Class (Props)`_
+>
+> ![destructuringProps3](img/destructuringProps3.PNG)
+>
+> ### _`Class (State)`_
+>
+> ![destructuringState1](img/destructuringState1.PNG)
 
 > ## **`State & Prop`**
 >

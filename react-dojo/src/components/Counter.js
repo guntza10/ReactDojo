@@ -40,12 +40,25 @@ class Counter extends Component {
         this.incrementWithPreviousState();
     }
 
+    // render() {
+    //     return (
+    //         <div>
+    //             <div> Count - {this.state.count}</div>
+    //             <button onClick={() => this.increment()}>Increment</button>
+    //             <div> Count2 - {this.state.count2}</div>
+    //             <button onClick={() => this.incrementFive()}>IncrementFive</button>
+    //         </div>
+    //     )
+    // }
+
+    // Destructuring State Class
     render() {
+        const { count, count2 } = this.state;
         return (
             <div>
-                <div> Count - {this.state.count}</div>
+                <div> Count - {count}</div>
                 <button onClick={() => this.increment()}>Increment</button>
-                <div> Count2 - {this.state.count2}</div>
+                <div> Count2 - {count2}</div>
                 <button onClick={() => this.incrementFive()}>IncrementFive</button>
             </div>
         )
