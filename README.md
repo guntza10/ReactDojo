@@ -223,6 +223,8 @@
 >
 > ## **`Event Handling`**
 >
+> => เป็นการจัดการ event ผ่าน attribute event
+>
 > `Note : ` ปกติ Event Handling จะอยู่ใน `" "` แต่ใน React จะอยู่ใน `{ }`
 >
 > `Note : ` ใน `Event Handling` เราต้องส่ง `Function` เข้าไปไม่ใช่ `Function Call` เพราะ `Function Call` มันจะถูกเรียกทันทีเมื่อ Component Initial เสร็จ ซึ่งยังไม่เกิด `Event Handling` เลยแต่ Function ถูก Call ไปแล้ว ผิดวัตถุประสงค์การทำ `Event Handling`
@@ -236,6 +238,8 @@
 > ![eventHandling2](img/eventHandling2.PNG)
 >
 > ## **`Binding Event Handlers`**
+>
+> => เป็นการ binding ตัว function หรือ method ที่เอาไว้จัดการกับ event
 >
 > `Note : ` `this keyword` ใน `event handler(declaration function)` มันจะ `undefine` ทำให้เวลาเราต้องการจะ `setState(this.setState)` หรือ เรียกใช้ `state(this.state)` หรืออะไรก็ตามที่ต้องใช้ `this keyword` จะไม่สามารถใช้งานได้ เราจึงจำเป็นต้องใช้การ `binding event` เข้ามาช่วย (`สำหรับ Class Component`)
 >
@@ -276,6 +280,10 @@
 > `Note : ` เป็นวิธีที่ React Document Recommend
 >
 > ![bindingEvent4](img/bindingEvent4.PNG)
+>
+> ### _`Why we need to bind event handlers in Class Components in React`_
+>
+> ## **`Methods as props`**
 
 > ## **`State & Prop`**
 >
