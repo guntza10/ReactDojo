@@ -220,6 +220,62 @@
 > ### _`Class (State)`_
 >
 > ![destructuringState1](img/destructuringState1.PNG)
+>
+> ## **`Event Handling`**
+>
+> `Note : ` ปกติ Event Handling จะอยู่ใน `" "` แต่ใน React จะอยู่ใน `{ }`
+>
+> `Note : ` ใน `Event Handling` เราต้องส่ง `Function` เข้าไปไม่ใช่ `Function Call` เพราะ `Function Call` มันจะถูกเรียกทันทีเมื่อ Component Initial เสร็จ ซึ่งยังไม่เกิด `Event Handling` เลยแต่ Function ถูก Call ไปแล้ว ผิดวัตถุประสงค์การทำ `Event Handling`
+>
+> ### _`Function (Event Handling)`_
+>
+> ![eventHandling](img/eventHandling.PNG)
+>
+> ### _`Class (Event Handling)`_
+>
+> ![eventHandling2](img/eventHandling2.PNG)
+>
+> ## **`Binding Event Handlers`**
+>
+> `Note : ` `this keyword` ใน `event handler(declaration function)` มันจะ `undefine` ทำให้เวลาเราต้องการจะ `setState(this.setState)` หรือ เรียกใช้ `state(this.state)` หรืออะไรก็ตามที่ต้องใช้ `this keyword` จะไม่สามารถใช้งานได้ เราจึงจำเป็นต้องใช้การ `binding event` เข้ามาช่วย (`สำหรับ Class Component`)
+>
+> ### _`Class (Binding Event)`_
+>
+> **Approach 1 [`Binding Event in render()`]**
+>
+> => ใช้ `bind(this)` -> ให้ event handler binding this ผ่าน method `bind()`
+>
+> `Note : ` เป็นวิธีที่ไม่แนะนำให้ใช้ เพราะจะมีผลต่อ Performance ในบาง Scenario
+>
+> ![bindingEvent1](img/bindingEvent1.PNG)
+>
+> **Approach 2 [`Binding Event in render()`]**
+>
+> => ใช้ `arrow function` -> ในการเรียกใช้ function call (`เป็นการเรียก callback function ผ่าน expression function เมื่อเกิด event`)
+>
+> `Note : ` จะคล้ายกับ `Approach 1` ที่จะมีผลต่อ Performance ในบาง Scenario และมันเป็นวิธีที่ง่ายที่สุดที่จะส่ง parameter เข้าไปใน `event handler`
+>
+> `Note : ` ยังใช้ได้ถ้า code เราไม่เกี่ยวกับการ render nested child component
+>
+> ![bindingEvent2](img/bindingEvent2.PNG)
+>
+> **Approach 3 [`Binding Event in Class Constructor()`]**
+>
+> => เป็นวิธีที่เรา binding event handler ด้วย `bind()` ที่ `Constructor` แล้วนำมาเก็บที่ Property ของ Class แล้วให้ Event Handling เรียกใช้ผ่าน Property ตัวนี้ได้เลย
+>
+> `Note : ` เป็นวิธีที่ React Document Recommend และเป็นวิธีที่นิยมทำกันเป็น` Best Practice`
+>
+> ![bindingEvent3-1](img/bindingEvent3-1.PNG)
+>
+> ![bindingEvent3-2](img/bindingEvent3-2.PNG)
+>
+> **Approach 4 [`expression function`]**
+>
+> => เป็นวิธีที่เราเรียกใช้ expression function ใน event handling ที่เป็น Property ของ Class
+>
+> `Note : ` เป็นวิธีที่ React Document Recommend
+>
+> ![bindingEvent4](img/bindingEvent4.PNG)
 
 > ## **`State & Prop`**
 >
@@ -330,3 +386,4 @@
 >
 > - `rce` => สร้าง component class ให้ auto ไม่ต้องเสียเวลาพิมพ์เอง (`**แต่อย่าลืมลบ export ข้างหน้า class ออก`)
 > - `rconst` => สร้าง constructor ของ component class ให้ auto
+> - `rfce` => สร้าง functional component ให้ auto

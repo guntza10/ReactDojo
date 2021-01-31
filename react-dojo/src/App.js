@@ -4,6 +4,9 @@ import ClassComponent from './components/ClassComponent';
 import PropDemo from './components/PropDemo';
 import Message from './components/Message';
 import Counter from './components/Counter';
+import FunctionClick from './components/FuctionClick';
+import ClassClick from './components/ClassClick';
+import EventBinding from './components/EventBinding';
 
 function App() {
   return (
@@ -30,6 +33,15 @@ function App() {
 
       <h1 style={{ color: "red" }}>setState</h1>
       <Counter />
+
+      <h1 style={{ color: "red" }}>Event Handling</h1>
+      <h2 style={{ color: "yellow" }}>Function</h2>
+      <FunctionClick />
+      <h2 style={{ color: "yellow" }}>Class</h2>
+      <ClassClick />
+
+      <h1 style={{ color: "red" }}>Binding Event Handlers</h1>
+      <EventBinding />
     </div>
   );
 }
