@@ -283,6 +283,18 @@
 >
 > ### _`Why we need to bind event handlers in Class Components in React`_
 >
+> #### **not use bind(this)**
+>
+> ![bindingThisReact](img/bindingThisReact.PNG)
+>
+> #### **use bind(this)**
+>
+> ![bindingThisReact2](img/bindingThisReact2.PNG)
+>
+> - จากตัวอย่างด้านบนจะเห็นว่าถ้าเราไม่ใช้ `bind(this)`function `handleClick()` จะ error เนื่องจากมัน lost context(ไม่รู้ว่า this จะ ref ถึงอะไร) ทำให้ this ใน function undefined เราจึงต้องเอา function `handleClick()` มา `bind(this)` เพื่อระบุ specific context ให้ this ใน function สามารถ ref ถึงได้
+> - https://www.freecodecamp.org/news/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb/
+> - อ่านเพิ่มเติมเกี่ยวกับ this keyword ที่ Project JavascriptDojo => Folder this
+>
 > ## **`Methods as props`**
 
 > ## **`State & Prop`**
