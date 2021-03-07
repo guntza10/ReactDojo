@@ -25,13 +25,6 @@ class IfElseRender extends Component {
                 </div>
             );
         }
-        // return (
-        //     <div>
-        //         <h2 style={{ color: "yellow" }}>If Else Render</h2>
-        //         <div>Welcome Gunt with LogIn</div>
-        //         <div>Welcome Gunt without LogIn</div>
-        //     </div>
-        // )
     }
 }
 

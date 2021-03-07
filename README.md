@@ -309,13 +309,36 @@
 >
 > ### _`if / else `_
 >
-> `Note : ` `if / else statement` ไม่สามารถใช้งานได้ใน `JSX` เพราะ `JSX` อนุญาตให้ใช้แค่ function call, object construction
+> ![ifElseRender](img/ifElseRender.PNG)
+>
+> `Note : ` `if / else statement` ไม่สามารถใช้งานใน `JSX` ได้ เพราะ `JSX` อนุญาตให้ใช้แค่ `function call`, `object construction` นั่นเป็นเหตุผลว่าทำไมเราถึงใช้ `if else statement` ข้างนอก `JSX` แล้วค่อย return statement ที่ contain JSX ออกไปแทนตามตัวอย่างข้างบน
 >
 > ### _`Element Variables`_
 >
+> => เป็นวิธีที่เก็บ JSX ไว้ที่ variable ของ Javascript แล้วเอาไป binding อีกที (`เราเรียก variable พวกนี้ว่า Element Variables`)
+>
+> ![elementVariablesRender](img/elementVariablesRender.PNG)
+>
 > ### _`Ternary conditional operator`_
 >
+> => เป็นวิธีการใช้ `short if(ternary conditional operator)` ในการเลือก condition ในการ render
+>
+> ![ternaryRender1](img/ternaryRender1.PNG)
+>
+> ![ternaryRender2](img/ternaryRender2.PNG)
+>
 > ### _`Short circuit operator`_
+>
+> => เป็นวิธีที่เหมือนกับ `Ternary conditional operator` แต่ต่างกันตรงที่ถ้า condition ถูกต้องให้ render แต่ถ้าไม่ถูกต้องก็ไม่ได้ทำอะไร
+>
+> ![shortCircuitRender](img/shortCircuitRender.PNG)
+>
+> `Note : ` `Ternary conditional operator` VS `Short circuit operator`
+>
+> - `Ternary conditional operator` => เลือก condition ในการ render เช่น ถ้า condition ถูกต้อง render 1 ถ้าไม่ถูกต้อง render 2
+> - `Short circuit operator` => เช็ค condition ว่าถูกต้องมั้ย? ถ้าถูกต้อง render ถ้าไม่ถูกต้องก็ไม่ได้ทำอะไร
+>
+> `Note : ` best practice for Condition Rendering ควรใช้ `Ternary conditional operator` หรือ `Short circuit operator` เพื่อ `clean, readable code`
 
 > ## **`State & Prop`**
 >

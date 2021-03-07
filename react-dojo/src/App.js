@@ -9,6 +9,9 @@ import ClassClick from './components/ClassClick';
 import EventBinding from './components/EventBinding';
 import MethodAsPropsParent from './components/MethodAsPropsParent';
 import IfElseRender from './components/IfElseRender';
+import ElementVarRender from './components/ElementVarRender';
+import TernaryOperatorRender from './components/TernaryOperatorRender';
+import ShortCircuitRender from './components/ShortCircuitRender';
 
 function App() {
   return (
@@ -50,6 +53,9 @@ function App() {
 
       <h1 style={{ color: "red" }}>Condition Rendering</h1>
       <IfElseRender />
+      <ElementVarRender />
+      <TernaryOperatorRender />
+      <ShortCircuitRender />
     </div>
   );
 }
