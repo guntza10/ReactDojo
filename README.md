@@ -296,6 +296,26 @@
 > - อ่านเพิ่มเติมเกี่ยวกับ this keyword ที่ Project JavascriptDojo => Folder this
 >
 > ## **`Methods as props`**
+>
+> => มันคือการส่ง `method` ไปเป็น `props` ให้กับ `child component` และ `child component` เรียกใช้ `method` ของ `parent component`
+>
+> ![methodAsProps1](img/methodAsProps1.PNG)
+>
+> ![methodAsProps2](img/methodAsProps2.PNG)
+>
+> ## **`Conditional Rendering`**
+>
+> => มี condition render อยู่ 4 แบบ
+>
+> ### _`if / else `_
+>
+> `Note : ` `if / else statement` ไม่สามารถใช้งานได้ใน `JSX` เพราะ `JSX` อนุญาตให้ใช้แค่ function call, object construction
+>
+> ### _`Element Variables`_
+>
+> ### _`Ternary conditional operator`_
+>
+> ### _`Short circuit operator`_
 
 > ## **`State & Prop`**
 >

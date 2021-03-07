@@ -7,6 +7,8 @@ import Counter from './components/Counter';
 import FunctionClick from './components/FuctionClick';
 import ClassClick from './components/ClassClick';
 import EventBinding from './components/EventBinding';
+import MethodAsPropsParent from './components/MethodAsPropsParent';
+import IfElseRender from './components/IfElseRender';
 
 function App() {
   return (
@@ -42,6 +44,12 @@ function App() {
 
       <h1 style={{ color: "red" }}>Binding Event Handlers</h1>
       <EventBinding />
+
+      <h1 style={{ color: "red" }}>Method As Props</h1>
+      <MethodAsPropsParent />
+
+      <h1 style={{ color: "red" }}>Condition Rendering</h1>
+      <IfElseRender />
     </div>
   );
 }
