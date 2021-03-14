@@ -12,6 +12,7 @@ import IfElseRender from './components/IfElseRender';
 import ElementVarRender from './components/ElementVarRender';
 import TernaryOperatorRender from './components/TernaryOperatorRender';
 import ShortCircuitRender from './components/ShortCircuitRender';
+import NameList from './components/NameList';
 
 function App() {
   return (
@@ -56,6 +57,9 @@ function App() {
       <ElementVarRender />
       <TernaryOperatorRender />
       <ShortCircuitRender />
+
+      <h1 style={{ color: "red" }}>List Rendering</h1>
+      <NameList />
     </div>
   );
 }

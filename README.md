@@ -339,101 +339,35 @@
 > - `Short circuit operator` => เช็ค condition ว่าถูกต้องมั้ย? ถ้าถูกต้อง render ถ้าไม่ถูกต้องก็ไม่ได้ทำอะไร
 >
 > `Note : ` best practice for Condition Rendering ควรใช้ `Ternary conditional operator` หรือ `Short circuit operator` เพื่อ `clean, readable code`
-
-> ## **`State & Prop`**
 >
-> ### _`State`_
+> ## **`List Rendering`**
 >
-> => เป็น object ที่เอาไว้เก็บข้อมูลของ component ถ้า state มีการเปลี่ยนแปลง component จะถูก re-render ใหม่
+> => เป็นการ render list item โดยการใช้ map ของ javascript เข้ามาช่วย
 >
-> ### **Approach 1 (function)**
+> `Note : ` ในการเขียน `javascript` ใน `JSX` ต้องเขียนใน `{ }` เสมอ การใช้ `map` ก็เช่นกัน
 >
-> - `useState()` => เอาไว้สร้าง state ให้ component
-> - `useState()` => จะ return array ที่เก็บ 2 ค่า คือ value ของ component state , function ในการ set state
+> ![listRender1](img/listRender1.PNG)
 >
-> ```
-> const [input, setInput] = useState("ค่าเริ่มต้นของ state");
-> -> input => เป็น current value ของ state
-> -> setInput => เป็น function ในการ set state ใหม่
-> ```
+> ![listRender3](img/listRender3.PNG)
 >
-> ![state1](img/state.PNG)
+> ![listRender2](img/listRender2.PNG)
 >
-> ### **Approach 2 (class)**
+> ## **`Lists and Keys`**
 >
-> - สร้างผ่าน property `state` ที่ inherit มาจาก Component(React)
-> - set state ผ่าน `this.setState()` ที่ inherit มาจาก Component(React)
-> - concept state จะเหมือนกับ Approach 1 คือมี current value ของ state, function ในการ set state ใหม่ให้ component
+> => ในการ render list item React จะต้องการให้เราระบุ key prop ให้แต่ละ component ในการ render list เพื่อบ่งบอกความเป็น unique ของแต่ละตัวใน list item
 >
-> ![state2](img/state2.PNG)
+> ![listKey1](img/listKey1.PNG)
 >
-> `Note : ` ทุก component จะต้องมี state ของตัวเอง
+> `Note : ` `key prop` ที่เอาไว้ระบุความเป็น unique ของแต่ละ component จะเป็นอะไรก็ได้ที่เราแน่ใจว่ามันสามารถบ่งบอกความเป็น unique ได้ เช่น id, index, name เป็นต้น\
+> `Note : ` `key prop` เอาไว้ใช้ในการ render เพื่อระบุความ unique ของแต่ละ component เท่านั้น ไม่สามารถ access เพื่อใช้งาน `key prop` ได้ เพราะฉะนั้นถ้าเรา access key prop ที่ child component มันจึง `undefined`
 >
-> ### _`Prop`_
+> ![listKey2](img/listKey2.PNG)
 >
-> => คือ property ที่เอาไว้ pass data ระหว่าง component โดยใช้ HTML attribute (`การส่ง data ระหว่าง component`)
+> `Note : ` Summary Lists and Keys
 >
-> ### **Approach 1 (function)**
->
-> ![prop1](img/prop1.PNG)
->
-> ![prop2](img/prop2.PNG)
->
-> ### **Approach 2 (class)**
->
-> ![prop3](img/prop3.PNG)
->
-> - มันจะเรียกค่า prop ผ่าน `this.props` ที่ inherit จาก Component (React)
-> - `this.props` มันเป็น read-only ไม่สามารถ assign ค่าให้มันได้ ทำให้ถ้าเราอยากเปลี่ยนค่า prop เราจะต้องทำผ่าน prop ที่เป็น function แล้วให้มันเปลี่ยนค่า property ของ state ที่ parent component แทน
->
-> ### _`PropTypes`_
->
-> => เอาไว้เช็ค `Prop` ที่ส่งเข้ามาว่าถูกต้องรึเปล่า ใน `PropTypes` จะประกอบไปด้วย Validator มากมายเลย (`เอาไว้ทำ Validate`)
->
-> ![propTypes](img/propTypes.PNG)
->
-> `Note : ` PropTypes ไม่มีใน React ต้องลงเพิ่ม
->
-> ```
-> npm i prop-types --save
->
-> --save เพื่อให้มัน save ลงบน package.json
-> ```
->
-> ## **`Handling Events`**
->
-> => `event` ใน `react` จะเป็น `camel case` ที่ขึ้นต้นด้วย `on` เช่น `onClick`, `onChange`, `onKeyDown`
->
-> ## **`Render (ใช้สำหรับที่เป็น Function Hook?)`**
->
-> `Note : ` การ render component ที่เป็น Array จะต้องมี Unique Key ประจำ child component เพื่อที่ React จะได้รู้ว่าจะต้องไป render child component ตัวไหน
->
-> ## **`React Component Life Cycle (ใช้สำหรับที่เป็น Class?)`**
->
-> 1. Mounting
->    => คือช่วงที่เปิดหน้าเว็บขึ้นมา component ต่างๆจะถูก Initialize
-> 2. Updating
->    => คือช่วงที่เรามีการ interact กับ component นั้นๆ แล้วทำให้เกิดการเปลี่ยนแปลง
-> 3. Unmounting
->    => คือช่วงที่เราปิดหน้าเว็บ หรือ มีการเปลี่ยนหน้าเว็บแล้ว component นั้นได้หายไป
->
-> ![lifeCycle](img/lifeCycle.PNG)
->
-> `Note : ` function ต่างๆในแต่ละ life cycle เป็นความสามารถที่ inherit มาจาก Component ที่ `import { Component } from 'react';`
->
-> ## **`React Routing`**
->
-> => เป็นการกำหนด route path ของการเปลี่ยนหน้า page (`กำหนด route path ให้ component เพื่อกำหนดว่า route นี้จะเอา component ไหนมา render`)
->
-> `Note : `
->
-> ```
-> npm install react-router-dom
-> ```
->
-> ## **`Hook`**
->
-> => เราสามารถใช้ `state` และ `feature อื่นๆของ react `ได้โดยที่ไม่ต้องเขียนเป็น `class component` อีกต่อไป สามารถนำมาเขียนใน `functional component` ได้
+> - key (`props`) เป็น Html attribute ที่ต้องใช้ในการทำ List Rendering
+> - key ใช้ระบุความ unique ช่วยให้ React สามารถรู้ได้ว่า item list ตัวไหนมีการ `changed`, `added`, `removed`
+> - ช่วยเพิ่มประสิทธิภาพการ update UI ของ React
 
 > `Note : ` ความรู้ใหม่
 >
