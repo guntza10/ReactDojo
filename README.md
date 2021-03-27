@@ -368,6 +368,18 @@
 > - key (`props`) เป็น Html attribute ที่ต้องใช้ในการทำ List Rendering
 > - key ใช้ระบุความ unique ช่วยให้ React สามารถรู้ได้ว่า item list ตัวไหนมีการ `changed`, `added`, `removed`
 > - ช่วยเพิ่มประสิทธิภาพการ update UI ของ React
+>
+> ## **`Index as Key Anti-pattern`**
+>
+> => เป็นการใช้ index ของ element เป็น key สำหรับ list rendering
+>
+> `Note :` เงื่อนไขในการใช้ index เป็น key
+>
+> - item ใน list ไม่มี `unique id`
+> - list เป็น static ไม่มีการเปลี่ยนแปลง (`การเปลี่ยนแปลง list จะทำให้ index ไม่สามารถ ref ได้เนื่องจาก index มีการเปลี่ยนแปลงเอามาใช้ ref unique ไม่ได้`)
+> - list ต้องไม่มีการ reorder หรือ filter (`ใน react ไม่สามารถใช้ index ในการ ref เพื่อที่จะ filter หรือ reorder ได้`)
+>
+> `Note : ` หลีกเลี่ยงการใช้ index เป็น key สำหรับ list rendering ถ้าไม่จำเป็น
 
 > `Note : ` ความรู้ใหม่
 >
