@@ -380,6 +380,59 @@
 > - list ต้องไม่มีการ reorder หรือ filter (`ใน react ไม่สามารถใช้ index ในการ ref เพื่อที่จะ filter หรือ reorder ได้`)
 >
 > `Note : ` หลีกเลี่ยงการใช้ index เป็น key สำหรับ list rendering ถ้าไม่จำเป็น
+>
+> ## **`Styling and CSS Basics`**
+>
+> => style CSS ทำได้หลายวิธี
+>
+> - CSS Stylesheets
+> - inline style
+> - CSS Modules
+> - CSS in JS Libraries (`EX. Styled-components`)
+>
+> 1. `CSS Stylesheets`
+>
+>    => เขียนไฟล์ CSS ธรรมดา แล้ว import ไปใช้ที่ Component
+>    ![styleCssBasic1](img/styleCssBasic1.PNG)
+>
+>    ![styleCssBasic2](img/styleCssBasic2.PNG)
+>
+>    ![styleCssBasic3](img/styleCssBasic3.PNG)
+>
+> `Note : ` CSS Stylesheets ธรรมดาเราสามารถ
+>
+> - ทำ `condition class css` ได้
+> - โดยใช้ `props`, `state` มาใช้จัดการ `condition` ได้
+> - สามารถทำ multi class css โดยใช้ template literal (`string interpolation`)
+>
+> 2.  `Inline style`
+>
+>     => inline style ใน react จะไม่ได้ใช้ string แต่จะใช้เป็น Object แทน และ property css จะต้องเป็น camel case เท่านั้น และ value ของ property จะต้องเป็น `string`
+>
+> `Note : ` Rule Inline Style
+>
+> - เป็น `Object`
+> - property ต้องเป็น `Camel Case`
+> - value ของ property ต้องเป็น `string`
+>
+>   ![styleCssBasic4](img/styleCssBasic4.PNG)
+>
+> 3.  `CSS Modules`
+>
+>     => เป็นการเขียน module สำหรับ css เวลาเรียกใช้ก็ import มาใช้เหมือนเรียกใช้ component และเราสามารถนำ css module ที่ import มา dot ใช้ชื่อ class ได้เลย ไม่จำเป็นต้องเรียกเป็นชื่อ class ในแบบ css stylesheets
+>
+> `Note : ` CSS Modules จะใช้ได้กับ `react-scripts` version 2.0 ขึ้นไปเท่านั้น
+>
+> `Note : `
+>
+> - ถ้าเป็น `css stylesheets` ธรรมดา ถ้าเรียกใช้ที่ `Parent Component` ที่ `Child Component` ก็สามารถใช้ได้ด้วย
+> - `CSS Module` ไม่สามารถส่งต่อไปใช้ใน `Child Component` ได้ ถ้าอยากใช้ต้อง import ไปใช้ใน Component นั้นๆด้วย
+>
+> ![styleCssBasic5](img/styleCssBasic5.PNG)
+>
+> ![styleCssBasic7](img/styleCssBasic7.PNG)
+>
+> ![styleCssBasic6](img/styleCssBasic6.PNG)
 
 > `Note : ` ความรู้ใหม่
 >
