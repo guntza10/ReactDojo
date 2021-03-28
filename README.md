@@ -457,6 +457,8 @@
 > `Note : ` `type="submit"` ของ button tag จะมีความสามารถในการ submit data ผ่านการกดที่ button นั้นๆหรือ ผ่าน enter key
 >
 > `Note : ` `type="submit"` จะมีผลต่อ form เท่านั้นเอาไปใช้กับ button ปกติ ความสามารถพวก enter key หรือ refresh หน้า + clear form จะใช้ไม่ได้ (`ทดลองมาแล้วจ้า`)
+>
+> ## **`Component Lifecycle Methods`**
 
 > `Note : ` ความรู้ใหม่
 >
