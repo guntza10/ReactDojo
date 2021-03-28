@@ -433,6 +433,30 @@
 > ![styleCssBasic7](img/styleCssBasic7.PNG)
 >
 > ![styleCssBasic6](img/styleCssBasic6.PNG)
+>
+> ## **`Basics of Form Handling`**
+>
+> => มี 3 steps ในการทำ Form Handling
+>
+> - `Create Html Element` สำหรับแต่ละ input ใน form
+> - สร้าง `state` ของ `input` นั้นๆ แล้ว assign ให้ input ผ่าน `attribute value`
+> - `binding event onChange` ให้กับ input เพื่อ `keep track input` นั้นๆผ่าน `event handler`
+>
+> ![formHandling1](img/formHandling1.PNG)
+>
+> ![formHandling2](img/formHandling2.PNG)
+>
+> ![formHandling3](img/formHandling3.PNG)
+>
+> `Note : ` default ของการ submit มันจะ refresh หน้า + clear form ใหม่ ถ้าไม่อยากให้มัน refresh + clear form ต้องใช้ `event.preventDefault()`
+>
+> ![formHandling4](img/formHandling4.PNG)
+>
+> `Note : ` ในกรณีที่เราไม่ได้มี `form tag` แล้วต้องการจะ `submit data` เราก็สร้าง `button` แล้ว `binding onClick event`
+>
+> `Note : ` `type="submit"` ของ button tag จะมีความสามารถในการ submit data ผ่านการกดที่ button นั้นๆหรือ ผ่าน enter key
+>
+> `Note : ` `type="submit"` จะมีผลต่อ form เท่านั้นเอาไปใช้กับ button ปกติ ความสามารถพวก enter key หรือ refresh หน้า + clear form จะใช้ไม่ได้ (`ทดลองมาแล้วจ้า`)
 
 > `Note : ` ความรู้ใหม่
 >
