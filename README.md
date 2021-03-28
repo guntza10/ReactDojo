@@ -471,33 +471,85 @@
 >
 > => มี 4 methods
 >
-> - `constructor`
-> - `static getDerivedStateFromProps`
-> - `render`
-> - `componentDidMount`
+> 1.  `constructor`
+>
+>     => จะถูกเรียกเมื่อ component ถูก create
+>
+>     `Note : ` เอาไว้ทำอะไร?
+>
+>     - เอาไว้ initialize state ของ component (`กำหนดค่าเริ่มต้นของ state`)
+>     - เอาไว้ binding event handler
+>
+>     `Note : ` ข้อห้าม
+>
+>     - ห้ามจัดการอะไรก็ตามที่เกี่ยวกับ HTTP Request เพราะมันจะทำแค่ครั้งเดียวคือตอนที่สร้าง component ขึ้นมาครั้งแรกแล้วจะไม่ถูกเรียกอีก
+>
+>     `Note : ` สิ่งที่สำคัญที่ต้องรู้
+>
+>     - ใน constructor ของ component จะมีการเรียก `super(props)` เพื่อเป็นการเรียกใช้ constructor ของ base class (`component class`) เพื่อส่ง props ไป init ผ่าน base class
+>     - เราจะสามารถใช้ `this.props` หลังจากที่ call `super(props)` เมื่อ props ถูก init ผ่าน base class เสร็จ
+>     - เป็นที่เดียวที่สามารถ assign ค่าให้ state ได้โดยตรง โดยที่ไม่ต้องผ่าน `this.setState()` เพราะว่ามันเป็นการกำหนดค่าเริ่มต้นให้ state โดยปกติการ assign ค่าให้ state โดยตรงทำได้ค่า state จะเปลี่ยนแปลงเพียงแต่ จะไม่มีการ re-render ทำให้หน้า UI ไม่มีการอัพเดทค่าของ state
+>
+> 2.  `static getDerivedStateFromProps (X)`
+>
+>     => จะถูกเรียกเมื่อ `state` ของ `component` ขึ้นอยู่กับการเปลี่ยนแปลงของ `props`
+>
+>     `Note : `
+>
+>     - เป็น method ที่ไม่ค่อยได้ใช้เท่าไร
+>     - ใช้ method นี้ในการ set state (`เมื่อ state ขึ้นอยู่กับการเปลี่ยนแปลงของ props`)
+>     - ไม่สามารถใช้ `this keyword` ใน method นี้ได้ เช่น `this.setState` แต่จะ return object ที่เป็น new state ของ component แทน
+>     - ห้ามจัดการอะไรก็ตามที่เกี่ยวกับ HTTP Request เพราะมันจะทำแค่ครั้งเดียวคือตอนที่สร้าง component ขึ้นมาครั้งแรกแล้วจะไม่ถูกเรียกอีก
+>
+> 3.  `render`
+>
+>     => เป็น method ที่เอาไว้ render UI
+>
+>     `Note : `
+>
+>     - read props & state
+>     - return JSX
+>     - หลังจากที่ method render ของ parent component ถูก render เสร็จ child component lifecycle method ก็จะถูก executed
+>
+>     `Note : ` สิ่งที่ไม่ควรทำ
+>
+>     - ไม่ควรเปลี่ยนแปลง state ใน method นี้
+>     - ไม่ควร interact กับ DOM ใน method นี้
+>     - ไม่ควร call HTTP Request
+>
+> 4.  `componentDidMount`
+>
+>     => จะถูกเรียกเมื่อ component ทั้งหมด(`ทั้ง parent,child`) ถูก init เสร็จ
+>
+>     `Note : `
+>
+>     - เป็นที่ที่เอาไว้จัดการ call HTTP Request ทั้งหมด
+>     - interact with DOM ที่นี่
+>
+>     ![lifeCycleMounting](img/lifeCycleMounting.PNG)
 >
 > ### _`Updating`_
 >
 > => มี 5 methods
 >
-> - `static getDerivedStateFromProps`
-> - `shouldComponentUpdate`
-> - `render`
-> - `getSnapshotBeforeUpdate`
-> - `componentDidUpdate`
+> 1. `static getDerivedStateFromProps`
+> 2. `shouldComponentUpdate`
+> 3. `render`
+> 4. `getSnapshotBeforeUpdate`
+> 5. `componentDidUpdate`
 >
 > ### _`Unmounting`_
 >
 > => มี 1 method
 >
-> - `componentWillUnmount`
+> 1. `componentWillUnmount`
 >
 > ### _`Error Handling`_
 >
 > => มี 2 methods
 >
-> - `static getDerivedStateFromError`
-> - `componentDidCatch`
+> 1. `static getDerivedStateFromError`
+> 2. `componentDidCatch`
 
 > `Note : ` ความรู้ใหม่
 >
