@@ -459,6 +459,45 @@
 > `Note : ` `type="submit"` จะมีผลต่อ form เท่านั้นเอาไปใช้กับ button ปกติ ความสามารถพวก enter key หรือ refresh หน้า + clear form จะใช้ไม่ได้ (`ทดลองมาแล้วจ้า`)
 >
 > ## **`Component Lifecycle Methods`**
+>
+> => มี 4 phase
+>
+> - `Mounting` => จะถูกเรียกใช้เมื่อ component ถูกสร้างและถูก insert เข้าไปใน DOM
+> - `Updating` => จะถูกเรียกเมื่อ component re-render จากการที่ state หรือ props มีการเปลี่ยนแปลง
+> - `Unmounting`=> จะถูกเรียกเมื่อ component ถูก remove ออกจาก DOM (`component ถูก destroy`)
+> - `Error Handling` => จะถูกเรียกเมื่อเกิด Error ขึ้นระหว่างการ render ใน Lifecycle method หรือ Constructor ของ Child Component
+>
+> ### _`Mounting`_
+>
+> => มี 4 methods
+>
+> - `constructor`
+> - `static getDerivedStateFromProps`
+> - `render`
+> - `componentDidMount`
+>
+> ### _`Updating`_
+>
+> => มี 5 methods
+>
+> - `static getDerivedStateFromProps`
+> - `shouldComponentUpdate`
+> - `render`
+> - `getSnapshotBeforeUpdate`
+> - `componentDidUpdate`
+>
+> ### _`Unmounting`_
+>
+> => มี 1 method
+>
+> - `componentWillUnmount`
+>
+> ### _`Error Handling`_
+>
+> => มี 2 methods
+>
+> - `static getDerivedStateFromError`
+> - `componentDidCatch`
 
 > `Note : ` ความรู้ใหม่
 >
