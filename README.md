@@ -614,6 +614,38 @@
 > ![fragment4](img/fragment4.PNG)
 >
 > ## **`Pure Components`**
+>
+> => เหมือนกับ component class ทุกอย่างต่างกันตรงที่ทุกครั้งที่ re-render ตัว pure component จะไม่ถูก re-render ใหม่
+>
+> `Note : ` จะ inherit PureComponent class แทน Component class
+>
+> `Note : ` จะใช้กับ scenario ที่เราไม่ต้องการให้มัน re-render โดยไม่จำเป็นเพื่อเพิ่ม performance ให้กับ App เช่น การ render list item 50 ตัว เป็นต้น
+>
+> `Note : ` ไม่ค่อยได้ใช้ ถ้าจะดูตัวอย่างค่อยกลับมาดู Video อีกรอบ
+>
+> ## **`Memo`**
+>
+> => คือการทำ Pure Component ของ Functional Component
+>
+> ![memo](img/memo.PNG)
+>
+> ## **`Refs`**
+>
+> => ใช้ในการ focus input auto เมื่อเปิด component ขึ้นมา
+>
+> ### **Approach 1(`React.createRef()`)**
+>
+> ![ref1](img/ref1.PNG)
+>
+> ![ref2](img/ref2.PNG)
+>
+> ### **Approach 2(`Callback Ref`)(Old Approach)**
+>
+> ![ref3](img/ref3.PNG)
+>
+> ![ref4](img/ref4.PNG)
+>
+> ![ref5](img/ref5.PNG)
 
 > `Note : ` ความรู้ใหม่
 >
