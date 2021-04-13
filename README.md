@@ -652,6 +652,12 @@
 > => เป็นการทำ ref child component จาก parent component
 >
 > `Note : ` https://www.youtube.com/watch?v=8aCXVC9Qmto&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=29
+>
+> ## **`Forwarding Refs`**
+>
+> => เป็นเทคนิคในการส่ง ref auto จาก parent ไป child component(`เป็นวิธีที่ใช้กับ Functional Component`)
+>
+> `Note : ` https://www.youtube.com/watch?v=RLWniwmfdq4&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=30
 
 > `Note : ` ความรู้ใหม่
 >
