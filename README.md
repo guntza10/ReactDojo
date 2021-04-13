@@ -646,6 +646,12 @@
 > ![ref4](img/ref4.PNG)
 >
 > ![ref5](img/ref5.PNG)
+>
+> ## **`Refs with Class Components`**
+>
+> => เป็นการทำ ref child component จาก parent component
+>
+> `Note : ` https://www.youtube.com/watch?v=8aCXVC9Qmto&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=29
 
 > `Note : ` ความรู้ใหม่
 >
