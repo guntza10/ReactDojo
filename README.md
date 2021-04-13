@@ -596,6 +596,24 @@
 > 2. `componentDidCatch(x)`
 >
 > ## **`Fragments`**
+>
+> => คือ tag(`React.Fragment`) ที่เอาไว้ครอบ multiple element ใน Html โดยที่เราไม่ต้องการให้มี `main tag` 1 ตัวครอบมาแสดง (`โดยปกติใน JSX multiple element จะต้องถูกครอบด้วย main tag 1 ตัว ไม่งั้นมันจะ error`)
+>
+> `Note : ` สามารถเขียนย่อๆ ได้เป็น (`<> </>`)
+>
+> **ตัวอย่างที่ใช้ main tag ปกติ**
+>
+> ![fragment1](img/fragment1.PNG)
+>
+> ![fragment2](img/fragment2.PNG)
+>
+> **ตัวอย่างที่ใช้ Fragment**
+>
+> ![fragment3](img/fragment3.PNG)
+>
+> ![fragment4](img/fragment4.PNG)
+>
+> ## **`Pure Components`**
 
 > `Note : ` ความรู้ใหม่
 >
