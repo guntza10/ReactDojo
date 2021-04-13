@@ -658,6 +658,43 @@
 > => เป็นเทคนิคในการส่ง ref auto จาก parent ไป child component(`เป็นวิธีที่ใช้กับ Functional Component`)
 >
 > `Note : ` https://www.youtube.com/watch?v=RLWniwmfdq4&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=30
+>
+> ## **`Portals`**
+>
+> => เป็นวิธีที่นำ root component(`App Component`) มา render แทน div tag id=root ใน main template(`index.html`)
+>
+> `Note : ` https://www.youtube.com/watch?v=HpHLa-5Wdys&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=31
+>
+> ## **`Error Boundary`**
+>
+> => เป็นการจัดการกับ error ที่เกิดขึ้นระหว่าง render life cycle หรือ ใน constructor ของ child component จะทำงานผ่าน component 1 ตัวที่เป็นตัว Error Boundary ว่าถ้ามันเกิด error จะให้แสดง UI แบบไหน โดยจัดการผ่าน 2 method
+>
+> - `static getDerivedStateFromError(error)` => เป็นตัว handle เพื่อเอา UI ของ case error มาแสดง
+> - `componentDidCatch(error,info)` => เอาไว้ log error,info ซึ่งโดย default มันจะ log error มาให้อยู่แล้วใน console ของ web browser
+>
+> `Note : ` Step ในการทำ Error Boundary
+>
+> 1. สร้าง component สำหรับทำ Error Boundary และสร้าง state ที่เอาไว้ check เพื่อแสดงเมื่อเกิด error
+>
+> ![errorBoundary1](img/errorBoundary1.PNG)
+>
+> ![errorBoundary2](img/errorBoundary2.PNG)
+>
+> 2. นำ Error Boundary Component ไปครอบ component ที่ต้องการจะ Handle Error Boundary
+>
+> **Example 1**
+>
+> ![errorBoundary3](img/errorBoundary3.PNG)
+>
+> ![errorBoundary4](img/errorBoundary4.PNG)
+>
+> **Example 2**
+>
+> ![errorBoundary5](img/errorBoundary5.PNG)
+>
+> ![errorBoundary6](img/errorBoundary6.PNG)
+>
+> `Note : ` ใน dev mode มันจะแสดง error เสมอ ต้องกดกากบาทออกเพื่อให้แสดง Error Boundary ที่เราจัดการไว้ ใน production mode จะไม่แสดง error อยู่แล้ว
 
 > `Note : ` ความรู้ใหม่
 >
