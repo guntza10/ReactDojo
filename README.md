@@ -532,11 +532,43 @@
 >
 > => มี 5 methods
 >
-> 1. `static getDerivedStateFromProps`
-> 2. `shouldComponentUpdate`
+> 1. `static getDerivedStateFromProps(x)`
+>
+>    => รับ parameter เป็น props, state return เป็น Null หรือ Object ที่แสดงถึง state ที่ถูก update จะถูกเรียกทุกครั้งที่ re-render และ state ขึ้นอยู่กับ props
+>
+>    `Note : ` เหมือนกับ `static getDerivedStateFromProps` ของ Mounting
+>
+> 2. `shouldComponentUpdate(nextProps,nextState)(x)`
+>
+>    => จะรับ update props, state ปกติ component จะ re-render เมื่อ props หรือ state มีการเปลี่ยนแปลง method เอาไว้ compare current props,state กับ next props,state และ return เป็น true, false เพื่อบอกให้ React รู้ว่าควร update state หรือ props หรือไม่?
+>
+>    `Note : ` สิ่งที่ไม่ควรทำ
+>
+>    - ไม่ควร call HTTP Request
+>    - ไม่ควร set state
+>
 > 3. `render`
-> 4. `getSnapshotBeforeUpdate`
-> 5. `componentDidUpdate`
+>
+>    => เหมือนกับใน Mounting
+>
+> 4. `getSnapshotBeforeUpdate(prevProps,prevState)(x)`
+>
+>    => จะถูกเรียกก่อนที่การเปลี่ยนแปลงจาก virtual DOM จะถูก reflect ไปที่ DOM
+>
+>    `Note : `
+>
+>    - เอาไว้ capture something ใน DOM
+>    - เอาไว้ read current DOM state และ return value or not
+>
+> 5. `componentDidUpdate(prevProps,prevState,snapshot)`
+>
+>    => จะถูกเรียกหลังจาก method render ทำงานเสร็จใน re-render cycle(เมื่อมีการเปลี่ยนแปลงของ state,prop)
+>
+>    `Note : `
+>
+>    - เอาไว้จัดการหลังจาก parent,child component re-render หลังจาก update เสร็จ
+>    - จะถูก call ครั้งเดียวเท่านั้นเมื่อมีการ re-render ในแต่ละ render cycle
+>    - เอาไว้จัดการเรื่อง call HTTP Request (โดยก่อนจะ call ต้องมีการ compare prevProp,newProp หรือ prevState,newState ก่อนจะ call หรือไม่)
 >
 > ### _`Unmounting`_
 >
@@ -544,12 +576,26 @@
 >
 > 1. `componentWillUnmount`
 >
+>    => จะถูกเรียกเมื่อ component ถูก unmount หรือ destroy (component ไม่ได้ถูกเรียกใช้ หรือ ถูกปิดไป)
+>
+>    `Note : `
+>
+>    - เอาไว้ cancle network request
+>    - เอาไว้ remove event handler
+>    - เอาไว้ cancle subscription
+>    - เอาไว้จัดการ invalidate timer
+>    - ไม่ควร set state
+>
 > ### _`Error Handling`_
+>
+> => จะถูกเรียกเมื่อเกิด error ขึ้นระหว่าง render life cycle หรือ ใน constructor ของ child component
 >
 > => มี 2 methods
 >
-> 1. `static getDerivedStateFromError`
-> 2. `componentDidCatch`
+> 1. `static getDerivedStateFromError(x)`
+> 2. `componentDidCatch(x)`
+>
+> ## **`Fragments`**
 
 > `Note : ` ความรู้ใหม่
 >
