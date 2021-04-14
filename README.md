@@ -722,6 +722,12 @@
 > - โดยปกติ component ที่มาผูก HOC มันจะทำงานต่างกัน ถ้าอยากให้มันทำงานต่างกันเราสามารถใส่ parameter เพิ่มเข้าเพื่อให้มันจัดการแยกได้
 >
 > `Note : ` https://www.youtube.com/watch?v=l8V59zIdBXU&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=35
+>
+> ## **`Render Props`**
+>
+> => เป็นการ share code(`เช่น function`) ระหว่าง component ด้วย render props pattern
+>
+> `Note : ` https://www.youtube.com/watch?v=EZil2OTyB4w&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=37
 
 > `Note : ` ความรู้ใหม่
 >
