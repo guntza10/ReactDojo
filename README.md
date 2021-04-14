@@ -728,6 +728,26 @@
 > => เป็นการ share code(`เช่น function`) ระหว่าง component ด้วย render props pattern
 >
 > `Note : ` https://www.youtube.com/watch?v=EZil2OTyB4w&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=37
+>
+> ## **`Context`**
+>
+> => เป็นวิธีที่ใช้ในการส่ง data ผ่าน context โดยไม่ต้องส่งเป็น props ลงไปเรื่อยๆให้กับ nested component
+>
+> ### **Step**
+>
+> 1. สร้าง `context` แล้ว export `contextProvider`, `contextConsumer`
+>
+>    ![context1](img/context1.PNG)
+>
+> 2. นำ `contextProvider` ไปครอบที่ component บนสุด(`top level component`) พร้อมทั้งส่งค่าที่ต้องการจะเอาไปใช้ใน `nested component` ผ่าน attribute value
+>
+>    ![context2](img/context2.PNG)
+>
+> 3. ใน `nested component` ที่ต้องการจะใช้ value ที่ share ไว้ที่ `contextProvider` ใช้ `contextConsumer` แล้วส่ง function ที่รับค่า `context value` เข้าไปข้างใน
+>
+>    ![context3](img/context3.PNG)
+>
+> `Note : ` advance => https://www.youtube.com/watch?v=A9WlkhdLnn0&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=40
 
 > `Note : ` ความรู้ใหม่
 >
