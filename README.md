@@ -748,6 +748,10 @@
 >    ![context3](img/context3.PNG)
 >
 > `Note : ` advance => https://www.youtube.com/watch?v=A9WlkhdLnn0&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=40
+>
+> ## **`HTTP and React`**
+>
+> => React ไม่ได้มีตัวจัดการกับ Http ถ้าต้องการจะเชื่อมต่อกับ api ทำ Http request,response ต้องใช้ Http library ของ javascript เช่น `Axios` เป็นต้น
 
 > `Note : ` ความรู้ใหม่
 >
