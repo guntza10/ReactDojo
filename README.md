@@ -695,6 +695,33 @@
 > ![errorBoundary6](img/errorBoundary6.PNG)
 >
 > `Note : ` ใน dev mode มันจะแสดง error เสมอ ต้องกดกากบาทออกเพื่อให้แสดง Error Boundary ที่เราจัดการไว้ ใน production mode จะไม่แสดง error อยู่แล้ว
+>
+> ## **`Higher Order Components`**
+>
+> => เป็นการจัดการเกี่ยวกับ function ที่เหมือนกันแล้วเอาไปใช้ในหลายๆ component เราจะมาเขียนใช้แค่ที่เดียวแล้ว component อื่นๆสามารถเอา function นี้ไปแชร์ใช้ได้ โดยไม่ต้องไป duplicate function ในแต่ละ component
+>
+> `Note : ` เป็นการส่ง function นั้นๆไปเป็น props แทนการ duplicate function (`เป็นการแชร์ function กันระหว่าง component`)
+>
+> ### **Step**
+>
+> 1. สร้าง Higher Order Component(`HOC`) ที่ข้างในจะมี component class ที่เอาไว้จัดการกับ function ที่ต้องการ share
+>
+> ![hoc1](img/hoc1.PNG)
+>
+> ![hoc2](img/hoc2.PNG)
+>
+> 2. นำ HOC ไปใช้กับ Component ที่ต้องการใช้ function นี้เหมือนกัน
+>
+> ![hoc3](img/hoc3.PNG)
+>
+> ![hoc4](img/hoc4.PNG)
+>
+> `Note : ` สิ่งที่ควรรู้ 2 ข้อ
+>
+> - props ที่เราส่งเข้าไปใน component ที่ผูกกับ HOC จะไม่สามารถเรียกใช้ props ได้โดยตรง เวลาจะนำ props มาใช้ต้องไปจัดการที่ HOC เพราะว่า component ที่ผูกกับ HOC ถูกทำงานผ่านตัว HOC นั่นเอง
+> - โดยปกติ component ที่มาผูก HOC มันจะทำงานต่างกัน ถ้าอยากให้มันทำงานต่างกันเราสามารถใส่ parameter เพิ่มเข้าเพื่อให้มันจัดการแยกได้
+>
+> `Note : ` https://www.youtube.com/watch?v=l8V59zIdBXU&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=35
 
 > `Note : ` ความรู้ใหม่
 >
