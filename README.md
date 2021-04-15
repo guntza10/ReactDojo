@@ -849,6 +849,24 @@
 > ![useEffect4](img/useEffect4.PNG)
 >
 > ### **`Fetching data with useEffect`**
+>
+> **Example1(Fetch Data Only Once)**
+>
+> ![useEffect5](img/useEffect5.PNG)
+>
+> **Example2(Fetch Data from onChange)**
+>
+> ![useEffect6](img/useEffect6.PNG)
+>
+> ![useEffect7](img/useEffect7.PNG)
+>
+> **Example3(Fetch Data from button click)**
+>
+> ![useEffect8](img/useEffect8.PNG)
+>
+> ![useEffect9](img/useEffect9.PNG)
+>
+> ![useEffect10](img/useEffect10.PNG)
 
 > `Note : ` ความรู้ใหม่
 >
