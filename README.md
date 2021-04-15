@@ -767,6 +767,44 @@
 > - ทำให้เราไม่ต้องเขียน code ที่เป็น `hierarchy(ลำดับชั้น)` ที่มีความซับซ้อนอีกต่อไป เช่น การทำ HOC เป็นต้น ซึ่งทำให้เขียน code ได้ง่ายขึ้น follow ตามได้ง่ายขึ้น
 >
 > ## **`useState Hook`**
+>
+> => เป็น method ที่เอาไว้กำหนด state โดยจะ return ออกมาเป็น array 2 ค่าคือ state,function ในการ setState(`เมื่อมีการเรียกใช้ function ในการ setState จะเกิดการ re-render`)
+>
+> `Note : ` เราสามารถทำ array destructuring ได้
+>
+> ![useState1](img/useState1.PNG)
+>
+> `Note : ` โดยปกติถ้าเราใช้ Class Component ในการจัดการ state เราจะต้องทำ 3 step คือ
+>
+> - สร้าง component ที่ inherit `component class` ของ `react`
+> - กำหนด `state`
+> - สร้าง function ในการ `setState`
+>
+> ซึ่ง `useState` จะจัดการทั้ง 3 steps ให้เราเรียบร้อย เราสามารถเอาไปใช้งานได้เลย
+>
+> `Note : ` กฎของการใช้ `React Hooks`
+>
+> - Call Hook ที่ Top Level ของ functional component เท่านั้น
+> - ไม่ Call Hook ใน loops, conditions, nested functions เด็ดขาด
+> - React Hooks ใช้กับ functional component เท่านั้น
+>
+> `Note : ` สามารถใช้ useState with previous state ได้
+>
+> ![useState2](img/useState2.PNG)
+>
+> `Note : ` สามารถใช้ useState with object ได้
+>
+> ![useState3](img/useState3.PNG)
+>
+> ![useState4](img/useState4.PNG)
+>
+> `Note : ` สามารถใช้ useState with array ได้
+>
+> ![useState5](img/useState5.PNG)
+>
+> ![useState6](img/useState6.PNG)
+>
+> ## **`useEffect Hook`**
 
 > `Note : ` ความรู้ใหม่
 >
