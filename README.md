@@ -805,6 +805,50 @@
 > ![useState6](img/useState6.PNG)
 >
 > ## **`useEffect Hook`**
+>
+> => เป็น `method` ที่เอาไว้จัดการพวก `side-effect` ใน `functional component` และมันเข้ามาแทนที่ `componentDidMount`, `componentDidUpdate`, `componentWillUnmount` ของ `Class Component`
+>
+> `Note : ` side-effect
+>
+> - update DOM
+> - fetch data จาก API
+> - setting พวก subscription หรือ timer
+>
+> `Note : ` `useEffect` จะทำงานทุกครั้งที่ component render(`first render + after every update`) หรือ ทำงานหลัง every render
+>
+> ![useEffect1](img/useEffect1.PNG)
+>
+> `Note : ` โดยปกติ `useEffect` จะทำงานทุกครั้งหลังจากที่มีการ `render` เสร็จ เราสามารถกำหนด condition ให้ `useEffect` ทำงานได้ว่าถ้า state หรือ props ตัวไหนมีการเปลี่ยนแปลง `useEffect` ค่อยทำงาน จากตัวอย่างข้างล่างจะเห็นว่า `useEffect` จะทำงานก็ต่อเมื่อ state count มีการเปลี่ยนแปลงเท่านั้น (`การเปลี่ยนแปลงนั้นต้องเกิดระหว่าง render เท่านั้น ถ้าเกิดก่อน render useEffect จะไม่ทำงาน`)
+>
+> ![useEffect2](img/useEffect2.PNG)
+>
+> ```
+> useEffect(() => {
+>
+> },[state หรือ props ที่ต้องการให้ useEffect depend])
+> ```
+>
+> `Note : ` run useEffect only once(`เปรียบเสมือนการทำงานของ componentDidMount ของ class`)
+>
+> ```
+> useEffect(() => {
+>
+> },[]) => ตัว depend ที่อยู่ใน array ก็เป็น empty เพื่อให้ useEffect call only once หลังจาก first render เท่านั้น
+> ```
+>
+> `Note : ` useEffect with cleanup (`useEffect unmount`) เอาไว้จัดการพวก cancle subscription, timer, event handler
+>
+> ![useEffect3](img/useEffect3.PNG)
+>
+> `Note : ` useEffect with incorrect dependency
+>
+> - ref : https://www.youtube.com/watch?v=SP-NrbQHFww&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=54
+>
+> `Note : ` `Multiple useEffect` => จะต้อง group `useState`, `useEffect` ให้อยู่ด้วยกัน
+>
+> ![useEffect4](img/useEffect4.PNG)
+>
+> ### **`Fetching data with useEffect`**
 
 > `Note : ` ความรู้ใหม่
 >
