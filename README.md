@@ -753,6 +753,21 @@
 >
 > => React ไม่ได้มีตัวจัดการกับ Http ถ้าต้องการจะเชื่อมต่อกับ api ทำ Http request,response ต้องใช้ Http library ของ javascript เช่น `Axios` เป็นต้น
 
+> # **`React Hooks`**
+>
+> => เป็น feature ของ React ที่ทำให้เราสามารถใช้ feature ต่างๆของ React ได้โดยไม่ต้องเขียน class (`ไม่ต้องใช้ Component Class`)
+>
+> `Note : ` React Hooks ใช้ได้แค่ใน `Functional Component` เท่านั้น ไม่สามารถนำไปใช้กับ `Class Component` ได้
+>
+> `Note : ` ทำไมควรใช้ React Hooks
+>
+> - สามารถใช้ feature ต่างๆ ของ React ได้โดยไม่ต้องเขียน Class
+> - ไม่ต้องสับสนกับการใช้ `this keyword` อีกต่อไป
+> - การเขียนเป็น Functional Component โดยใช้ React Hooks จะทำให้ component มีขนาดที่เล็กลง
+> - ทำให้เราไม่ต้องเขียน code ที่เป็น `hierarchy(ลำดับชั้น)` ที่มีความซับซ้อนอีกต่อไป เช่น การทำ HOC เป็นต้น ซึ่งทำให้เขียน code ได้ง่ายขึ้น follow ตามได้ง่ายขึ้น
+>
+> ## **`useState Hook`**
+
 > `Note : ` ความรู้ใหม่
 >
 > ```
