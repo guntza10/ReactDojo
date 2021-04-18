@@ -867,6 +867,27 @@
 > ![useEffect9](img/useEffect9.PNG)
 >
 > ![useEffect10](img/useEffect10.PNG)
+>
+> ## **`useContext Hook`**
+>
+> => เป็น method ที่ใช้ในการส่ง data ผ่าน context โดยไม่ต้องส่งเป็น props ลงไปเรื่อยๆให้กับ nested component (`เป็นการส่ง data ไปให้ component tree โดยที่เราไม่จำเป็นต้องส่งเป็น props ให้ทุกๆ level ของ nested component`)
+>
+> `Note : ` การใช้ context แบบปกติ จะมีปัญหาเมื่อเราทำ multiple context ตรงที่เราจะต้อง nested context ซ้อนกันไปเรื่อยๆ มันก็ทำงานได้ แต่มันทำให้ code อ่านยาก และไม่ควรทำ `useContext` จะเข้ามาช่วยแก้ปัญหานี้ ทำให้สามารถจัดการกับ context ได้ง่ายขึ้น\
+> `Ref :` https://www.youtube.com/watch?v=tEqNSOhCHLU&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=59
+>
+> **Example**
+>
+> 1. สร้าง context สำหรับ data ที่ต้องการส่ง และ export เพื่อเอาไปใช้ใน component tree ที่ต้องการส่งไป
+>
+>    ![useContext1](img/useContext1.PNG)
+>
+> 2. import useContext ของ React และ context ทั้งหมดที่เราต้องการจะใช้ data จากนั้น นำ useContext มาอ่าน value จาก context แต่ละตัว แล้วนำไปใช้
+>
+>    ![useContext2](img/useContext2.PNG)
+>
+> ## **`useReducer Hook`**
+>
+> =>
 
 > `Note : ` ความรู้ใหม่
 >
