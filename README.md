@@ -768,7 +768,7 @@
 >
 > ## **`useState Hook`**
 >
-> => เป็น method ที่เอาไว้กำหนด state โดยจะ return ออกมาเป็น array 2 ค่าคือ state,function ในการ setState(`เมื่อมีการเรียกใช้ function ในการ setState จะเกิดการ re-render`)
+> => เป็น hook ที่เอาไว้กำหนด state โดยจะ return ออกมาเป็น array 2 ค่าคือ state,function ในการ setState(`เมื่อมีการเรียกใช้ function ในการ setState จะเกิดการ re-render`)
 >
 > `Note : ` เราสามารถทำ array destructuring ได้
 >
@@ -806,7 +806,7 @@
 >
 > ## **`useEffect Hook`**
 >
-> => เป็น `method` ที่เอาไว้จัดการพวก `side-effect` ใน `functional component` และมันเข้ามาแทนที่ `componentDidMount`, `componentDidUpdate`, `componentWillUnmount` ของ `Class Component`
+> => เป็น hook ที่เอาไว้จัดการพวก `side-effect` ใน `functional component` และมันเข้ามาแทนที่ `componentDidMount`, `componentDidUpdate`, `componentWillUnmount` ของ `Class Component`
 >
 > `Note : ` side-effect
 >
@@ -870,7 +870,7 @@
 >
 > ## **`useContext Hook`**
 >
-> => เป็น method ที่ใช้ในการส่ง data ผ่าน context โดยไม่ต้องส่งเป็น props ลงไปเรื่อยๆให้กับ nested component (`เป็นการส่ง data ไปให้ component tree โดยที่เราไม่จำเป็นต้องส่งเป็น props ให้ทุกๆ level ของ nested component`)
+> => เป็น hook ที่ใช้ในการส่ง data ผ่าน context โดยไม่ต้องส่งเป็น props ลงไปเรื่อยๆให้กับ nested component (`เป็นการส่ง data ไปให้ component tree โดยที่เราไม่จำเป็นต้องส่งเป็น props ให้ทุกๆ level ของ nested component`)
 >
 > `Note : ` การใช้ context แบบปกติ จะมีปัญหาเมื่อเราทำ multiple context ตรงที่เราจะต้อง nested context ซ้อนกันไปเรื่อยๆ มันก็ทำงานได้ แต่มันทำให้ code อ่านยาก และไม่ควรทำ `useContext` จะเข้ามาช่วยแก้ปัญหานี้ ทำให้สามารถจัดการกับ context ได้ง่ายขึ้น\
 > `Ref :` https://www.youtube.com/watch?v=tEqNSOhCHLU&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=59
@@ -887,7 +887,63 @@
 >
 > ## **`useReducer Hook`**
 >
-> =>
+> => เป็น hook ที่เอาไว้จัดการกับ state เป็นอีก 1 way ในการใช้ useState
+>
+> ![useReducer1](img/useReducer1.PNG)
+>
+> `Note : `
+>
+> - เป็น hook ที่เอาไว้จัดการ state
+> - useReducer(`reducer`,`initialState`) จะรับ parameter 2 ตัวคือ reducer function, initialState (`state เริ่มต้น`) จะ return ออกมาเป็น array มี 2 ค่า คือ state,dispatch function ที่เอาไว้ใช้ในการ check เพื่อ return new state
+> - reducer(`currentState`,`action`) reducer function จะรับ parameter 2 ตัว คือ current state, action และ return ค่าเป็น `new state`
+>
+> ### **`useReducer (simple state & action)`**
+>
+> 1. สร้าง initialState กับ reducer function ไว้ข้างนอก function component
+>
+> ![useReducer2](img/useReducer2.PNG)
+>
+> 2. ส่ง reducer function กับ initialState เป็น argument ใน useReducer และทำ array destructuring ออกมาเป็น 2 ตัวคือ state, dispatch function และนำ state, dispatch function ไปใช้
+>
+> ![useReducer3](img/useReducer3.PNG)
+>
+> `Note : ` เหมาะสำหรับเอาไปใช้กับ redux
+>
+> ### **`useReducer (complex state & action)`**
+>
+> **first scenario**
+>
+> ![useReducer4](img/useReducer4.PNG)
+>
+> ![useReducer5](img/useReducer5.PNG)
+>
+> **second scenario**
+>
+> ![useReducer6](img/useReducer6.PNG)
+>
+> ![useReducer7](img/useReducer7.PNG)
+>
+> **third scenario**
+>
+> ![useReducer6](img/useReducer6.PNG)
+>
+> ![useReducer7](img/useReducer7.PNG)
+>
+> **fourth scenario**
+>
+> ![useReducer8](img/useReducer8.PNG)
+>
+> ![useReducer9](img/useReducer9.PNG)
+>
+> ![useReducer10](img/useReducer10.PNG)
+>
+> ### **`Multiple useReducers`**
+>
+> => เป็นการใช้ useReducer ที่จัดการ state ที่ต่างกันจาก reducer function, initialState เดียวกัน อันนี้เป็นแค่ 1 ในตัวอย่าง multiple useReducers แบบง่าย
+>
+> ![useReducer11](img/useReducer11.PNG)
+>
+> ![useReducer12](img/useReducer12.PNG)
 
 > `Note : ` ความรู้ใหม่
 >
