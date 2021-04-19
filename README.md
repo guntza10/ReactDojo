@@ -629,6 +629,8 @@
 >
 > ![memo](img/memo.PNG)
 >
+> `Note : ` มันจะ re-render ก็ต่อเมื่อ props หรือ state ของ component ที่เป็น memo มีการเปลี่ยนแปลงเท่านั้น ยกเว้น function ที่ถูกส่งเป็น props ให้กับ memo component มันจะ re-render ใหม่เสมอ แม้ไม่มีการเปลี่ยนแปลงหรือเรียกใช้
+>
 > ## **`Refs`**
 >
 > => ใช้ในการ focus input auto เมื่อเปิด component ขึ้นมา
@@ -990,6 +992,16 @@
 > 5. local vs global
 >    - useState เหมาะกับจัดการ local state ใน component ของตัวเอง
 >    - useReducer เหมาะกับจัดการ global state ที่เราสามารถเอาไป share ใช้ต่อใน child component ได้ (`useReducer with useContext`)
+>
+> ## **`useCallback Hook`**
+>
+> `Note : ` memo component มันจะ re-render ก็ต่อเมื่อ props หรือ state มีการเปลี่ยนแปลงเท่านั้น ยกเว้น function ที่ถูกส่งเป็น props ให้กับ memo component มันจะ re-render ใหม่เสมอ แม้ไม่มีการเปลี่ยนแปลงหรือเรียกใช้ เพราะว่าทุกครั้งที่ function ของ parent ถูกสร้าง parent จะ re-render แล้ว memo มันเลยมอง function ที่ถูกส่งเป็น props ว่ามีการ change ทำให้ memo เลย re-render ด้วยกับการ change ของ props นี้
+>
+> => เราจึงใช้ useCallback แก้ปัญหาข้างบน โดย useCallback จะทำให้ทุกครั้งที่ function ถูกสร้าง parent จะไม่ re-render function มันก็จะทำให้ตอนที่ส่งไปเป็น props memo ก็จะไม่มองว่ามีการ change แล้ว แล้ว function ที่เกิดจการใช้ useCallback ก็จะทำงานก็ต่อเมื่อ dependency ที่อยู่ใน array มีการเปลี่ยนแปลง
+>
+> ![useCallback](img/useCallback.PNG)
+>
+> `Note : ` ทำไมเราถึงไม่ควรใช้ useCallback ทุกครั้ง อ่านต่อที่ => https://kentcdodds.com/blog/usememo-and-usecallback
 
 > `Note : ` ความรู้ใหม่
 >
