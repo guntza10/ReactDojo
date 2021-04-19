@@ -944,6 +944,28 @@
 > ![useReducer11](img/useReducer11.PNG)
 >
 > ![useReducer12](img/useReducer12.PNG)
+>
+> ### **`useReducer with useContext`**
+>
+> => เป็นวิธีการ share local state(`useReducer`) ที่ parent แล้ว child สามารถนำไปใช้ได้ผ่าน `useContext`
+>
+> **Step**
+>
+> 1. สร้าง reducer function, initialState จากนั้นสร้าง context ขึ้นมา นำ provider ของ context ไปครอบ child component แล้วส่ง value ที่ต้องการเข้าไป value ที่ส่งเข้าไปสร้างจาก `useReducer(reducer,initialState)` จะได้ state, dispatch function ที่เอาไว้ใช้ return new state
+>
+> ![useReducer13](img/useReducer13.PNG)
+>
+> ![useReducer14](img/useReducer14.PNG)
+>
+> 2. import context ไปใช้ที่ child component ที่ต้องการ จากนั้นใช้ useContext ในการ get value โดยการอ่านจาก context แล้วนำค่าที่ได้จาก useContext ไปใช้
+>
+> ![useReducer15](img/useReducer15.PNG)
+>
+> ![useReducer16](img/useReducer16.PNG)
+>
+> ![useReducer17](img/useReducer17.PNG)
+>
+> ### **`Fetching data with useReducer`**
 
 > `Note : ` ความรู้ใหม่
 >
