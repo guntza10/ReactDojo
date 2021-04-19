@@ -966,6 +966,30 @@
 > ![useReducer17](img/useReducer17.PNG)
 >
 > ### **`Fetching data with useReducer`**
+>
+> `Ref useState-useEffect` : https://www.youtube.com/watch?v=snzS7-73SEQ&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=66
+>
+> `Ref useReducer-useEffect` : youtube.com/watch?v=imjfiXxvMD8&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=67
+>
+> ### **`useState vs useReducer`**
+>
+> ![useReducer18](img/useReducer18.PNG)
+>
+> 1. type of state
+>    - useState ใช้กับ พวก `primitive type`
+>    - useReducer ใช้กับ พวก `Object หรือ Array`
+> 2. จำนวนของ state
+>    - useState เหมาะกับจัดการ state แค่ 1 หรือ 2 ตัว
+>    - useReducer เหมาะกับจัดการ multiple state ที่มีตั้งแต่ 3 ตัวขึ้นไป ใช้ useReducer จัดการง่ายกว่า
+> 3. related state transition
+>    - useState จัดการ individual state ใคร state มันไม่ได้เกี่ยวข้องกัน
+>    - useReducer จัดการ multiple state ทั้งหมดที่เป็น object เดียวกัน ถ้ามีการอัพเดท state ไหน state นึงในนั้นต้องอัพเดท state ตัวอื่นด้วย โดยทำการ spread state เดิม + overide state ใหม่ที่ต้องการจะอัพเดท
+> 4. business logic
+>    - useState จัดการกับ state โดยไม่ได้มี business logic อะไรมาเกี่ยวข้อง ก็คือการอัพเดทค่า state ใหม่ตรงๆเลย
+>    - useReducer จัดการกับ state โดยมี business logic มาเกี่ยวข้อง ก็คือมีการจัดการ logic ก่อนที่จะอัพเดท state ใหม่
+> 5. local vs global
+>    - useState เหมาะกับจัดการ local state ใน component ของตัวเอง
+>    - useReducer เหมาะกับจัดการ global state ที่เราสามารถเอาไป share ใช้ต่อใน child component ได้ (`useReducer with useContext`)
 
 > `Note : ` ความรู้ใหม่
 >
