@@ -1002,6 +1002,26 @@
 > ![useCallback](img/useCallback.PNG)
 >
 > `Note : ` ทำไมเราถึงไม่ควรใช้ useCallback ทุกครั้ง อ่านต่อที่ => https://kentcdodds.com/blog/usememo-and-usecallback
+>
+> ## **`useMemo Hook`**
+>
+> `Note : ` useCallback and useMemo อ่านต่อที่ => https://kentcdodds.com/blog/usememo-and-usecallback
+>
+> `Note : ` useCallback ใช้เพื่อ catch function, useMemo ใช้เพื่อ catch result ของ function ทั้งคู่ต่างใช้เพื่อเพิ่ม performance ให้กับ App
+>
+> ## **`useRef Hook`**
+>
+> => เป็น hook ที่ใช้สำหรับ access DOM node ใน functional component
+>
+> `Example 1(ใช้ useRef ใน child เพื่อให้ input ใน child auto focus)`
+>
+> ![useRef1](img/useRef1.PNG)
+>
+> `Example 2(ใช้ useRef ในการ store mutable value`
+>
+> ![useRef2](img/useRef2.PNG)
+>
+> ![useRef3](img/useRef3.PNG)
 
 > `Note : ` ความรู้ใหม่
 >
