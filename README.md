@@ -1051,6 +1051,16 @@
 > ![customHook6](img/customHook6.PNG)
 >
 > `Note : ` Ref => https://www.youtube.com/watch?v=W3_GIiN-nuc&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=75
+>
+> ### **`useInput Custom Hook`**
+>
+> => ตัวอย่างนี้จะเป็นการใช้ custom hook ในการ handle onChange, binding input
+>
+> ![customHook7](img/customHook7.PNG)
+>
+> ![customHook8](img/customHook8.PNG)
+>
+> ![customHook9](img/customHook9.PNG)
 
 > `Note : ` ความรู้ใหม่
 >
