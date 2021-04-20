@@ -1022,6 +1022,23 @@
 > ![useRef2](img/useRef2.PNG)
 >
 > ![useRef3](img/useRef3.PNG)
+>
+> ## **`Custom Hooks`**
+>
+> - เป็น javascript function ธรรมดาที่ชื่อขึ้นต้นด้วย use
+> - สามารถเรียกใช้ hook ตัวอื่นได้ถ้าต้องการ
+>
+> ### **`useDocumentTitle Custom Hook`**
+>
+> => ตัวอย่างนี้เป็นการใช้ custom hook เมื่อมี Logic เดียวกันที่ต่าง component คือการที่กดปุ่มแล้วให้ไป set document.title ของ component DocTitleOne,DocTitleTwo
+>
+> ![customHook1](img/customHook1.PNG)
+>
+> ![customHook2](img/customHook2.PNG)
+>
+> ![customHook3](img/customHook3.PNG)
+>
+> `Note : ` Ref => https://www.youtube.com/watch?v=4yp6T-hF5ZY&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=74
 
 > `Note : ` ความรู้ใหม่
 >
