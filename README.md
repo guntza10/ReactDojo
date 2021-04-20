@@ -1039,6 +1039,18 @@
 > ![customHook3](img/customHook3.PNG)
 >
 > `Note : ` Ref => https://www.youtube.com/watch?v=4yp6T-hF5ZY&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=74
+>
+> ### **`useCounter Custom Hook`**
+>
+> => ตัวอย่างนี้เป็นการใช้ custom hook เมื่อ component มี state, logic, function ในการจัดการเหมือนกันทุกอย่าง แต่เราต้องการให้ initial state, value ในการ increment,decrement, reset ไม่เหมือนกัน
+>
+> ![customHook4](img/customHook4.PNG)
+>
+> ![customHook5](img/customHook5.PNG)
+>
+> ![customHook6](img/customHook6.PNG)
+>
+> `Note : ` Ref => https://www.youtube.com/watch?v=W3_GIiN-nuc&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=75
 
 > `Note : ` ความรู้ใหม่
 >
