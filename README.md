@@ -655,6 +655,12 @@
 >
 > => เป็นการทำ ref child component จาก parent component
 >
+> `Note : ` เป็นการ access child จาก parent
+>
+> ![ref6](img/ref6.PNG)
+>
+> ![ref7](img/ref7.PNG)
+>
 > `Note : ` https://www.youtube.com/watch?v=8aCXVC9Qmto&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=29
 >
 > ## **`Forwarding Refs`**
