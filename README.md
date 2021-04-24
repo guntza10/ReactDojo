@@ -669,6 +669,8 @@
 >
 > => เป็นเทคนิคในการส่ง ref auto จาก parent ไป child component(`เป็นวิธีที่ใช้กับ Functional Component`)
 >
+> `Note : ` เป็นการทำ ref child จาก parent ของ functional component (`เป็นการ access child จาก parent ของ functional component`)
+>
 > `Note : ` https://www.youtube.com/watch?v=RLWniwmfdq4&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=30
 >
 > ## **`Portals`**
