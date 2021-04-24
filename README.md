@@ -635,6 +635,8 @@
 >
 > => ใช้ในการ focus input auto เมื่อเปิด component ขึ้นมา
 >
+> `Note : ` ใช้ในการ access DOM Element และ value ของ DOM Element
+>
 > ### **Approach 1(`React.createRef()`)**
 >
 > ![ref1](img/ref1.PNG)
